@@ -1,0 +1,93 @@
+
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+
+public class test {
+
+	static JFrame jf = null;
+	static JTextArea jt = null;
+
+	
+public static void main(String[] args) {
+	  
+	  
+	    jf = new JFrame();
+	    jt = new JTextArea(100,100);
+	    
+	    jf.add(jt);
+		jf.setSize(400,400);
+		jf.setVisible(true);                                   //frame creation and visibility enable and many more
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+				
+		
+		
+    // Create tasks
+    Runnable printA = new PrintChar('a', 3000);
+    Runnable printB = new PrintChar('b', 3000);
+    Runnable print100 = new PrintNum(5000);
+
+    // Create threads
+    Thread thread1 = new Thread(printA);
+    Thread thread2 = new Thread(printB);
+    Thread thread3 = new Thread(print100);
+    
+    thread1.setPriority(Thread.MAX_PRIORITY);
+
+    // Start threads
+    thread1.start();
+    thread2.start();
+    thread3.start();
+  }
+}
+
+// The task for printing a specified character in specified times
+class PrintChar implements Runnable {
+  private char charToPrint; // The character to print
+  private int times; // The times to repeat
+
+  /** Construct a task with specified character and number of
+   *  times to print the character
+   */
+  public PrintChar(char c, int t) {
+    charToPrint = c;
+    times = t;
+  }
+
+  @Override /** Override the run() method to tell the system
+   *  what the task to perform
+   */
+  public void run() {
+    for (int i = 0; i < times; i++) {
+    	
+    
+    test.jt.append(String.valueOf(charToPrint));	
+	//	jt.append(String.valueOf(charToPrint));
+      //System.out.print(charToPrint);
+    }
+  }
+}
+
+// The task class for printing number from 1 to n for a given n
+class PrintNum implements Runnable {
+  private int lastNum;
+
+  /** Construct a task for printing 1, 2, ... i */
+  public PrintNum(int n) {
+    lastNum = n;
+  }
+
+  @Override /** Tell the thread how to run */
+  public void run() {
+    for (int i = 1; i <= lastNum; i++) {
+    	
+    	test.jt.append(String.valueOf(i));
+     // System.out.print(" " + i);
+      Thread.yield();
+    }
+  }
+}
+
+		
+		
