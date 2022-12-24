@@ -1,0 +1,16 @@
+body{
+	padding:40px;
+}
+#container{
+	width: 500px;
+	background-color:#0080c0;
+	border-style:solid;
+	border-color:black;
+	padding-left:50px;
+}
+t1{
+	font-weight:bold;
+}
+h2{
+	font-weight:bold;
+}

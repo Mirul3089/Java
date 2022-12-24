@@ -1,0 +1,26 @@
+body{
+	padding-left:400px;
+	padding-top:70px;
+}
+form{
+	background-color:#0080c0;
+	border-style:solid;
+	border-color:black;
+	padding:15px;
+	padding-bottom:30px;
+	padding-top:40px;
+	padding-left:30px;
+	width: 400px;
+    height: 200px;
+}
+#container{
+	width: 300px;
+	height: 900px;
+}
+
+input,button,select{
+	background-color:#9ee9fe;
+}
+.ename{
+	background-color:white;
+}

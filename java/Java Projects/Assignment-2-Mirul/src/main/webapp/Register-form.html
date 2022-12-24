@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="reg.css">
+<title>Assignment2</title>
+</head>
+<body>
+	<div id="container">
+		<form class="assignment2" action="insert_form_records" method="post">
+			Emp number: &nbsp<input type="text" , name="enumber"><br><br>
+			Emp Name: &nbsp<input type="text" , name="ename"><br><br>
+			Job Title: &nbsp<select name="jobs" id="jobs">
+				<option value="programmer">Programmer</option>
+				<option value="tester">Tester</option>
+				<option value="engineer">Engineer</option>
+				<option value="projectmanager">Project Manager</option>
+			</select><br><br>
+			Department: &nbsp<input type="radio" name="dep" value="IT">IT</input>
+			<input type="radio" name="dep" value="Financial">Financial</input>
+			<input type="radio" name="dep" value="Sale">Sale</input><br><br>
+			<button type="submit" value="submit">Register</button>
+			<br>
+		</form>
+	</div>
+</body>
+</html>
