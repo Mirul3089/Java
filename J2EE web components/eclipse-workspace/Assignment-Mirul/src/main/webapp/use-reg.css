@@ -1,0 +1,15 @@
+body{
+	padding-left:400px;
+}
+form{
+	background-color:skyblue;
+	border-style:solid;
+	border-color:black;
+	padding:20px;
+	
+}
+#container{
+	width: 500px;
+	height: 500px;
+
+}
