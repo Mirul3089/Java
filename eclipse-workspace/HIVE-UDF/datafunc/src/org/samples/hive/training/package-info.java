@@ -1,0 +1,1 @@
+package org.samples.hive.training;
