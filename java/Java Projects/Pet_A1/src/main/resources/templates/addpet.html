@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Add pet</title>
+</head>
+<body>
+<div id="container">
+	<form th:action="@{/addPet}" th:object="${pet}" method="POST" >
+	<div>
+	  <label>Name</label>
+	  <input type="text"  th:field="*{name}"><br><br>
+	</div>
+	<div>
+	  <label>Breed</label>
+	  <input type="text"  th:field="*{breed}"><br><br>
+	</div>
+	<div>
+		<label id="id">Category</label> <br><br>
+		<select th:field="*{tpe}">
+		<option value=>Select type</option>
+		    <th:block th:each="pe: ${pettype}">
+				<option 
+				th:text="${pe.tpe}"
+				th:value="${pe.tpe}"/>
+			</th:block>
+		</select>
+		<br>
+	</div><br><br>
+	
+	<button type="submit" >Submit</button>
+  </form>
+  <div>  
+</body>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th{
+background-color:skyblue;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    padding:110px;
+    font-family:trebuchet ms,sans-serif;
+}
+form{
+	background-color:skyblue;
+	border-style:solid;
+	border-color:black;
+	padding:50px;
+	
+}
+#container{
+	width: 500px;
+	height: 500px;
+
+}
+</style>
+</html>

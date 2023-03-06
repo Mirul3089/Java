@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+<title>Add Owner</title>
+</head>
+<body>
+<div id="container">
+	<form th:action="@{/addOwner}" th:object="${owners}" method="POST" >
+	<div>
+	  <label>First Name</label>
+	  <input type="text" th:field="*{firstName}"><br><br>
+	</div>
+	<div >
+	  <label>Last Name</label>
+	  <input type="text" th:field="*{lastName}"><br><br>
+	</div>
+	<div>
+	  <label>Email</label>
+	  <input type="text" th:field="*{email}"><br><br>
+	</div>
+	<div>
+		<label id="id">PetName</label> <br><br>
+		<select th:field="*{pet}">
+		<option value=>Select pet</option>
+		    <th:block th:each="pet: ${petcatagories}">
+				<option 
+				th:text="${pet.name}"
+				th:value="${pet.Id}"/>
+			</th:block>
+		</select>
+		<br>
+	</div><br><br>
+	
+	<button type="submit">Submit</button>
+  </form> 
+  </div> 
+</body>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th{
+background-color:skyblue;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    padding:110px;
+    font-family:trebuchet ms,sans-serif;
+}
+form{
+	background-color:skyblue;
+	border-style:solid;
+	border-color:black;
+	padding:50px;
+	
+}
+#container{
+	width: 500px;
+	height: 500px;
+
+}
+</style>
+</html>

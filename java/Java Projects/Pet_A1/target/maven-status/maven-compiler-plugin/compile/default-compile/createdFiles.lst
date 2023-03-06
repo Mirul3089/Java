@@ -1,0 +1,7 @@
+com\humber\eap\PetA1Application.class
+com\humber\eap\model\Pet$Type.class
+com\humber\eap\repo\PetRepository.class
+com\humber\eap\repo\OwnerRepository.class
+com\humber\eap\model\Owner.class
+com\humber\eap\controller\PetController.class
+com\humber\eap\model\Pet.class
