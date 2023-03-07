@@ -78,8 +78,8 @@ public class PetController {
 	}
 	
 	@PostMapping("/deletevalue")
-	@Query("DELETE * from Owner where pet_id=?1")
-	String findOwnerById(Integer pet_id) {
+	//@Query("DELETE * from Owner where pet_id=?1")
+	public String findOwnerById(@RequestParam Integer pet_id) {
 		or.deleteById(pet_id);
 		return "redirect:/all";
 	}
