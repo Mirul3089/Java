@@ -31,7 +31,7 @@
 		       <td th:text="${owner.firstName}" />
 		       <td th:text="${owner.lastName}" />
 		       <td th:text="${owner.email}" />
-		       <td><form th:action="@{/deletevalue}" method="POST"> <input type="submit" value="Delete" onclick="deleteRow(this)"></form></td>
+		        <td><form th:action="@{/deletevalue}" method="POST"> <input type="hidden" name="pet_id" th:value="${owner.pet.Id}"><button type="submit" class="btn btn-danger">Delete</button></form></td>
 		   </tr>
 		</tbody>
     </table><br><br>
