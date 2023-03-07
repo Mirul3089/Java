@@ -24,7 +24,7 @@
 		       <td th:text="${pet.name}" />
 		       <td th:text="${pet.tpe}" />
 		       <td th:text="${pet.breed}" />
-		       <td><form th:action="@{/deletevalue}" method="POST"> <input type="submit" value="Delete"></form></td>
+		       <td><form th:action="@{/deletevalue}" method="POST"> <input type="hidden" name="pet_id" th:value="${pet.Id}"><button type="submit" class="btn btn-danger">Delete</button></form></td>
 		   </tr>
 		</tbody>
     </table><br><br>
