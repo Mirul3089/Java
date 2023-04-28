@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">    
+<head>
+<meta charset="utf-8">
+<title>Employees</title>
+</head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body>
+<div class="topnav">
+  <a class="active" th:href=@{/}>Home</a>
+  <a th:href=@{/addemployee}>Add Employee</a>
+  <a th:href=@{/logout}>Log Out</a>
+</div>
+<div id="container">
+<h1 class="display-6 text-center">Employee List</h1>
+<form id="form" role="search" th:action="@{/searchemployee}" method="POST">
+  <input type="search" id="query" name="search"
+   placeholder="Search..."
+   aria-label="Search through site content">
+  <button class="search" type="submit">Search</button>
+</form><br>
+<div class="result-container">
+<th:block th:each="em: ${emps}">
+<a th:href=@{/employeeid}>
+<th:block th:each="em: ${emps}">
+    <td th:text="${em.firstName}+ ' ' +${em.lastName}+ ' is in ' +${em.dept.name}" /><br><br>
+</th:block>
+</a>
+</th:block>
+</div>
+
+<br><br>
+    <table class="table table-dark table-striped" id="mt">
+    	<thead>
+    		<tr>
+    			<th scope="col">Employee Id</th>
+    			<th scope="col">Employee Name</th>
+    			<th scope="col">Details</th>
+    		</tr>
+    	</thead>
+        <tbody>
+		   <tr th:each="employee: ${employees}">
+		       <th th:name="employee.id" scope="row" th:text="${employee.id}" name="r1"/>
+		       <td th:text="${employee.firstName}+ ' ' +${employee.lastName}" name="r1"></td>
+		       <td id="formid"><form id="a1" th:action="@{/employee}" method="POST"> <input type="hidden" name="emp_id" th:value="${employee.id}"><button type="submit" class="btn btn-danger">Employee Details</button></form></td>
+		   </tr>
+		</tbody>
+    </table><br><br>
+   </div>
+</body>
+<!--<script>
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("mt").deleteRow(i);
+}
+</script>-->
+<style>
+table, th,td {
+  border: 1px solid black;
+}
+th{
+background-color:skyblue;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left:110px;
+    font-family:trebuchet ms,sans-serif;
+}
+form {
+  background-color: skyblue;
+  width: 235px;
+  height: 44px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}#container{
+	width: 500px;
+	height: auto;
+    border: 2px solid skyblue;
+    padding-left:175px;
+	padding-bottom:50px;
+}
+input{
+padding:5px;
+}
+#id{
+padding:5px;
+}
+#a1{
+width:120px;
+}
+.search{
+height:28px;
+}
+.result-container{
+max-height:150px;
+overflow-y:auto;
+transition: visibility 0.1s,  opacity 0.1s;
+display:block;
+color:black;
+padding:10px;
+font-size:1em;
+cursor:pointer;
+text-decoration:none;
+}
+.topnav {
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: black;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+</style>
+</html>

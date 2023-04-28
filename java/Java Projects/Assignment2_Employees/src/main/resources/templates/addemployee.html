@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Add Employee</title>
+</head>
+<body>
+<div class="topnav">
+  <a th:href=@{/}>Home</a>
+  <a class="active" >Add Employee</a>
+   <a th:href=@{/logout}>Log Out</a>
+</div>
+<div id="container">
+	<form th:action="@{/saveEmployee}" th:object="${emp}" method="POST" >
+	<div>
+	  <label>Employee FirstName</label>
+	  <input type="text"  th:field="*{firstName}"><br><br>
+	</div>
+	<div>
+	  <label>Employee LastName</label>
+	  <input type="text"  th:field="*{lastName}"><br><br>
+	</div>
+	<div>
+	  <label>Role</label>
+	  <input type="text"  th:field="*{role}"><br><br>
+	</div>
+	<div>
+		<label id="id">Department</label> <br><br>
+		<select th:field="*{dept.name}">
+		<option value=>Select Department</option>
+		    <th:block th:each="de: ${departments}">
+				<option 
+				th:text="${de.name}"
+				th:value="${de.name}"/>
+			</th:block>
+		</select>&nbsp;&nbsp;
+		<label>OR:</label>
+		<label>Add Department</label>&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  th:field="*{dept.name}"><br><br>
+		<br>
+	</div>
+	<button type="submit" >Add Employee</button>
+  </form> 
+</div>
+</body>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th{
+background-color:skyblue;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    padding:110px;
+    padding-bottom:0px;
+    font-family:trebuchet ms,sans-serif;
+    padding-top:10px;
+}
+form{
+	border-style:solid;
+	border-color:black;
+	padding:50px;
+	
+}
+#container{
+	width: 500px;
+	height: auto;
+	border: 2px solid skyblue;
+}
+h2{
+text-align:center;
+}
+.topnav {
+  overflow: hidden;
+  background-color: skyblue;
+  width:auto;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: black;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+select{
+height:25px;
+}
+</style>
+</html>

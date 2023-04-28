@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">    
+<head>
+<meta charset="utf-8">
+<title>Employee details</title>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" th:href=@{/}>Home</a>
+  <a th:href=@{/addemployee}>Add Employee</a>
+  <a th:href=@{/logout}>Log Out</a>
+</div>
+<div id="container">
+<h1 class="display-6 text-center">Employee details</h1>
+<img src="icons8-name.gif" alt="Avatar" class="avatar"><br>
+      <label>Employee Id:</label>&nbsp;<value th:text="${employees.id}"/><br><br>
+      <label>Employee FirstName:</label>&nbsp;<value th:text="${employees.firstName}"/><br><br>
+      <label>Employee LastName:</label>&nbsp;<value th:text="${employees.lastName}"/><br><br>
+      <label>Employee Role:</label>&nbsp;<value th:text="${employees.role}"/><br><br>
+      <label>Employee Department:</label>&nbsp;<value th:text="${employees.dept.name}"/><br><br>
+   </div>
+</body>
+<!--<script>
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("mt").deleteRow(i);
+}
+</script>-->
+<style>
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left:110px;
+    font-family:trebuchet ms,sans-serif;
+}
+#container{
+	width: 500px;
+	height: 490px;
+	padding-left:225px;
+	padding-bottom:50px;
+	border: 2px solid skyblue;
+
+}
+.avatar {
+  vertical-align: middle;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+label{
+color:skyblue;
+font-style:bold;
+font-size:20px;
+}
+value{
+font-style:bold;
+font-size:20px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: black;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+</style>
+</html>

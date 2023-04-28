@@ -1,0 +1,12 @@
+insert into Department(name,numof_employees) values('IT',30)
+insert into Department(name,numof_employees) values('QA',5)
+insert into Department(name,numof_employees) values('Sales',20)
+insert into Department(name,numof_employees) values('Finance',10)
+insert into Department(name,numof_employees) values('Network',10)
+
+insert into Employees(first_name,last_name,role,dept_id) values('Mirul','Patel','Data Engineer',1)
+insert into Employees(first_name,last_name,role,dept_id) values('Rishi','Patel','Software Engineer',2)
+insert into Employees(first_name,last_name,role,dept_id) values('Raj','Patel','Sales developer',3)
+insert into Employees(first_name,last_name,role,dept_id) values('Harshil','Patel','Fund manager',4)
+insert into Employees(first_name,last_name,role,dept_id) values('Rushi','Patel','Network admin',5)
+insert into Employees(first_name,last_name,role,dept_id) values('Rahul','Patel','Network admin',5)
